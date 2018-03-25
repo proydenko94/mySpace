@@ -1,0 +1,155 @@
+<div class="container" chaos-circles>
+    <div class="header">
+        <div class="wrapper">
+            <img src="assets/img/logo@2x.png" srcset="assets/img/logo@2x.png 2x, assets/img/logo.png 1x" width="60" height="41">
+            <div class="mobile-menu-toggle" ng-class="{'active': openedMenu}" ng-click="openedMenu=!openedMenu">
+                <div class="stick"></div>
+                <div class="stick"></div>
+                <div class="stick"></div>
+            </div>
+            <div class="left-menu" ng-class="{'opened': openedMenu}">
+                <div class="links">
+                    <a href="#" ng-bind="translate('About')"></a><!--
+                    --><a href="#" ng-bind="translate('Project')"></a><!--
+                    --><a href="#" ng-bind="translate('Monetization')"></a><!--
+                    --><a href="#" ng-bind="translate('Roadmap')"></a>
+                </div>
+            </div>
+            
+            <div class="right-menu" ng-class="{'opened': openedMenu}">
+                <div class="links">
+                    <a href="#" ng-bind="translate('Team')"></a><!--
+                    --><a href="#" ng-bind="translate('Bounty')"></a><!--
+                    --><div class="lang-wrapper" ng-class="{'active': toggleLang}" ng-click="toggleLang = !toggleLang">
+                        <a href="#" ng-bind="lang" class="uppercase"></a>
+                        <div class="choose-lang" ng-show="toggleLang" ng-bind="$root.lang=='ru'?'EN':'RU'" ng-click="$root.lang=($root.lang=='ru'?'en':'ru')"></div>
+                    </div><!--
+                    --><a href="#" ng-bind="translate('Login')" class="login"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subheader">
+        <h4 ng-bind="translate('h4_text')" class="revealator-slideup revealator-fade revealator-once"></h3>
+        <h1 ng-bind-html="translate('h1_text')" class="revealator-slideup revealator-fade revealator-once revealator-delay2"></h1>
+        <div class="buttons">
+            <button class="btn blue revealator-slideright revealator-fade revealator-once revealator-delay3" ng-bind="translate('Whitepaper')"></button><!--
+            --><button class="btn transparent revealator-slideright revealator-fade revealator-once revealator-delay1" ng-bind="translate('btn2')" ></button>
+        </div>
+        <div class="timer ">
+            <div class="time-unit">
+                <p ng-bind="timer.days" class="revealator-slideright revealator-fade revealator-once revealator-delay5"></p>
+                <p ng-bind="translate('Days')" class="revealator-slideright revealator-fade revealator-once revealator-delay6"></p>
+            </div><!--
+            --><div class="time-unit">
+                <p ng-bind="timer.hours" class="revealator-slideright revealator-fade revealator-once revealator-delay4"></p>
+                <p ng-bind="translate('Hours')" class="revealator-slideright revealator-fade revealator-once revealator-delay5"></p>
+            </div><!--
+            --><div class="time-unit">
+                <p ng-bind="timer.minutes" class="revealator-slideright revealator-fade revealator-once revealator-delay3"></p>
+                <p ng-bind="translate('Minutes')" class="revealator-slideright revealator-fade revealator-once revealator-delay4"></p>
+            </div><!--
+            --><div class="time-unit">
+                <p ng-bind="timer.seconds" class="revealator-slideright revealator-fade revealator-once revealator-delay2"></p>
+                <p ng-bind="translate('Seconds')" class="revealator-slideright revealator-fade revealator-once revealator-delay3"></p>
+            </div>
+        </div>
+        <form class="form revealator-slideup revealator-fade revealator-once revealator-delay6" ng-submit="submitForm()" >
+            <div class="input-wrapper">
+                <label for="" ng-bind="translate('emailPlaceholder')" ng-class="{'fill': formData.email.length}"></label>
+                <input type="text" ng-model="formData.email" ng-class="{'error': formData.emailError}">
+                <p ng-bind="formData.emailError" class="error"></p>
+            </div>
+            <div class="input-wrapper">
+                <label for="" ng-bind="translate('passwordPlaceholder')" ng-class="{'fill': formData.password.length}"></label>
+                <input type="password" ng-model="formData.password" ng-class="{'error': formData.passwordError}" id="password-field">
+                <!-- <input type="text" ng-model="formData.password" ng-show="showHint" ng-class="{'error': formData.passwordError}"> -->
+                <div class="hint" ng-click="showHint=!showHint;togglePasswordHint();" ng-class="{'active': showHint}">
+                    <div class="show-pass" ng-bind="translate('showPassword')"></div>
+                </div>
+                
+                <p ng-bind="formData.passwordError" class="error"></p>
+            </div>
+            <button type="submit" class="btn2 red" ng-bind="translate('Confirm')"></button>
+        </form>
+    </div>
+    <div class="graph">
+            <div class="plan">
+                <h4 ng-bind="translate('realizationPlan')" class="revealator-slideright revealator-fade revealator-once revealator-delay1"></h4>
+                <p class="values">
+                    <span class="big revealator-slideright revealator-fade revealator-once revealator-delay1" ng-bind="formatNumber(slider.value)"></span>
+                    <span class="revealator-slideleft revealator-fade revealator-once revealator-delay2">/ {{formatNumber(slider.options.ceil)}}</span>
+                </p>
+                <div class="slider-wrapper">
+                    <rzslider
+                    rz-slider-model="slider.value"
+                    rz-slider-options="slider.options"></rzslider>
+                </div>
+                <h4 ng-bind="translate('acceptedPayment')" class="revealator-slidedown revealator-fade revealator-once revealator-delay1"></h4>
+                <div class="icons-wrapper">
+                    <img src="assets/img/btc.svg" alt="" class="revealator-slideup revealator-fade revealator-once revealator-delay1">
+                    <img src="assets/img/etc-alt.svg" alt="" class="revealator-slideup revealator-fade revealator-once revealator-delay2">
+                    <img src="assets/img/xrp.svg" alt="" class="revealator-slideup revealator-fade revealator-once revealator-delay3">
+                    <img src="assets/img/dash.svg" alt="" class="revealator-slideup revealator-fade revealator-once revealator-delay4">
+                    <img src="assets/img/ltc.svg" alt="" class="revealator-slideup revealator-fade revealator-once revealator-delay5">
+                    <img src="assets/img/eth.svg" alt="" class="revealator-slideup revealator-fade revealator-once revealator-delay6">
+                </div>
+            </div>
+    </div>
+    <div class="carousel-wrapper">
+
+            <slick class="slider" settings="slickConfig" ng-if="slickReady">
+                <div class="slider-item">
+                    <div class="card" >
+                        <img src="assets/img/slider/bitcoin@2x.png" srcset="assets/img/slider/bitcoin@2x.png 2x, assets/img/slider/bitcoin.png 1x" width="187" height="30" alt="">
+                        <div class="text">
+                            “With so many different ways today to find information online, it can sometimes be hard to know where to go to first”
+                        </div>
+                        <div class="date" >11 APR 2018</div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="card" >
+                        <img src="assets/img/slider/cryptocoins@2x.png" srcset="assets/img/slider/cryptocoins@2x.png 2x, assets/img/slider/cryptocoins.png 1x" width="190" height="45" alt="">
+                        <div class="text">
+                            “Because of the huge investment other companies have put into their search technology, it’s getting harder and harder”
+                        </div>
+                        <div class="date" >11 APR 2018</div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="card" >
+                        <img src="assets/img/slider/bitcoin2@2x.png" srcset="assets/img/slider/bitcoin2@2x.png 2x, assets/img/slider/bitcoin2.png 1x" width="190" height="48" alt="">
+                        <div class="text">
+                            “The biggest and most commonly used method is to use a search engine”
+                        </div>
+                        <div class="date" >11 APR 2018</div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="card" >
+                        <img src="assets/img/slider/coin@2x.png" srcset="assets/img/slider/coin@2x.png 2x, assets/img/slider/coin.png 1x" width="173" height="28" alt="">
+                        <div class="text">
+                            “Web directories will usually either be relative or general”
+                        </div>
+                        <div class="date" >11 APR 2018</div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="card" >
+                        <img src="assets/img/slider/cryptocoins@2x.png" srcset="assets/img/slider/cryptocoins@2x.png 2x, assets/img/slider/cryptocoins.png 1x" width="190" height="45" alt="">
+                        <div class="text">
+                            “Because of the huge investment other companies have put into their search technology, it’s getting harder and harder”
+                        </div>
+                        <div class="date" >11 APR 2018</div>
+                    </div>
+                </div>
+            </slick>
+    </div>
+</div>
+

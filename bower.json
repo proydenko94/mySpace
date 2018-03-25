@@ -1,0 +1,28 @@
+{
+  "name": "testtask",
+  "authors": [
+    "proydenko94 <proydenko94@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.4.2",
+    "underscore": "^1.8.3",
+    "moment": "^2.15.1",
+    "jquery": "^1.11.0",
+    "angular-animate": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
+    "angularjs-slider": "^6.5.0",
+    "open-sans-fontface": "^1.4.2",
+    "slick-carousel": "^1.8.1"
+  }
+}

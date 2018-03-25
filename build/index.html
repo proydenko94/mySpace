@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en" ng-app="app" ng-controller="mainController"><head><meta charset="UTF-8"><title>My space</title><base href="/"><link rel="stylesheet" href="assets/init.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><!-- bower:css --><!-- endbower --><link rel="stylesheet" href="css/index.css"><style>body {
+            background-color: #181e2d;
+        }</style><script>var circles = [];
+        function css(el, obj){
+            for(var i in obj) {
+                el.style[i] = obj[i];
+            }
+            
+        }
+        function createCircle(){
+            var el = document.createElement('div');
+            var size = Math.floor(Math.random()*3)+6;
+            
+            css(el, {
+                width: size+'px',
+                height: size+'px',
+                position: "absolute",
+                opacity: 0,
+                transition: "opacity .3s ease-in-out",
+                "border-radius": "50%",
+                left: Math.floor(Math.random()*screen.width)+'px',
+                top: (80+Math.floor(Math.random()*400))+'px',
+                background: `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`
+            })
+            // circles.push(el);
+            return el;
+        }
+        var interval = setInterval(()=>{
+            var circle = createCircle();
+            // element.append(circle);
+            document.getElementsByTagName("body")[0].appendChild(circle);
+            circles.push(circle);
+            setTimeout(()=>{
+                css(circle, {
+                    opacity: 1
+                })
+            }, 0)
+            if(circles.length>15) {
+                css(circles[0], {
+                    opacity: 0
+                })
+                setTimeout(()=>{
+                    circles[0].remove();
+                    circles.shift();
+                }, 200)
+                
+                
+            }
+        }, 300);</script></head><body><div class="ui-view main-container"></div><!-- bower:js --><!-- endbower --><script src="scripts/vendor.js"></script><link rel="stylesheet" href="vendor.css"><script src="index.js"></script><!-- inject:js --><!-- endinject --></body></html>

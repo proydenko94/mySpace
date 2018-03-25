@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1360" height="377" viewBox="0 0 1360 377">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#1C98EE"/>
+            <stop offset="100%" stop-color="#20C0CF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="d" x1="1.15%" x2="97.781%" y1="104.207%" y2="104.207%">
+            <stop offset="0%" stop-color="#1A82FF" stop-opacity="0"/>
+            <stop offset="12.778%" stop-color="#1B8BF8"/>
+            <stop offset="88.17%" stop-color="#23DEB7"/>
+            <stop offset="100%" stop-color="#24EBAD" stop-opacity="0"/>
+        </linearGradient>
+        <path id="c" d="M113 256.925c122.729-2.163 118.444-173.763 168.088-174.067 49.643-.303 40.287 160.029 98.974 158.882 58.687-1.147 51.84-144.777 101.264-143.93 43.088.739 34.07 80.883 99.534 81.36 98.777.717 94.507-174.383 148.498-174.761 57.67-.404 52.678 142.318 102.359 142.139 49.681-.18 51.483-100.449 98.103-102.396 46.62-1.947 52.691 142.454 103.144 142.479 50.453.025 47.378-95.251 98.633-94.43 51.254.823 46.449 139.049 99.211 138.57 52.762-.48 49.81-138.372 100.757-138.384 50.947-.011 49.465 113.125 99.601 112.994 50.136-.131 91.378-111.087 154.978-107.414"/>
+        <filter id="b" width="109.5%" height="155.4%" x="-4.8%" y="-27.7%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/>
+            <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feMorphology in="SourceAlpha" radius="1" result="shadowInner"/>
+            <feOffset in="shadowInner" result="shadowInner"/>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="23"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.929528061 0 0 0 0 0.340760938 0 0 0 0 0.872087366 0 0 0 0.56139606 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M112.675 252.517C235.403 250.354 231.118 78.753 280.762 78.45c49.644-.303 41.036 158.882 98.974 158.882 57.939 0 54.939-143.773 101.265-143.93 46.326-.157 34.07 80.883 99.533 81.359C679.311 175.479 675.042.379 729.033.001c57.67-.404 52.677 142.318 102.358 142.139 49.682-.18 51.484-100.45 98.104-102.396 46.62-1.947 52.69 142.454 103.144 142.479 50.453.025 47.378-95.251 98.632-94.43 51.255.823 46.45 139.048 99.212 138.57 52.762-.48 49.81-138.373 100.756-138.384 50.947-.011 49.466 113.125 99.602 112.994 50.136-.132 91.378-111.087 154.978-107.414 63.6 3.674 57.501 243.16 57.501 243.16H0v-89.605" opacity=".08" transform="translate(-142 40)"/>
+        <g transform="translate(-142 40)">
+            <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+            <use stroke="url(#d)" stroke-width="2" xlink:href="#c"/>
+        </g>
+    </g>
+</svg>
